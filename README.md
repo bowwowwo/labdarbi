@@ -1,2 +1,2 @@
 # labdarbi
-repo lab darbiem
+repo laborotorijas darbiem
