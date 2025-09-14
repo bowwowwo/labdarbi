@@ -19,33 +19,26 @@ def factors(x):
     count = 0
     x = int(x)    
     for i in range(x):                                      
-        y = x / (i+1)
-        if y % 1 == 0:
+        if x % (i+1) == 0:
             count += 1
     return(count)                                           
 
 while ok == 1:
   while True:
-        try:
-          m = int(input("Ievadiet naturālu skaitli m: "))
-          if m < 1:
-            print("nav naturāls skaitlis")
-            continue
-          else:
-            break 
-        except ValueError:                                  # * nav jāpārbauda vai ir pareizs datu tips, taču naturāli skaitļi neiekļauj neveselus skaitļus(float)
-          print("nav naturāls skaitlis")
+    m = int(input("Ievadiet naturālu skaitli m: "))
+    if m < 1:
+      print("nav naturāls skaitlis")
+      continue
+    else:
+      break 
 
   while True:
-        try:
-          n = int(input("Ievadiet naturālu skaitli n: "))
-          if n < 1:
-            print("nav naturāls skaitlis")
-            continue
-          else:
-            break 
-        except ValueError:
-          print("nav naturāls skaitlis")
+    n = int(input("Ievadiet naturālu skaitli n: "))
+    if n < 1:
+      print("nav naturāls skaitlis")
+      continue
+    else:
+      break 
         
   print(f"Skaitļu reizinātāju starpība:  {factors(m) - factors(n)}")
   ok = int(input("Vai turpināt (1) vai beigt (0)?"))
