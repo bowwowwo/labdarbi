@@ -15,7 +15,7 @@ m = 0
 n = 0
 ok = 1
 
-def factors(x):                                          # funkcija izmantota, lai kods būtu vieglāk lasāms
+def factors_count(x):          #funkcija, kas atgriež argumenta skaitļa reizinātāju skaitu                                # funkcija izmantota, lai kods būtu vieglāk lasāms
     count = 0
     x = int(x)    
     for i in range(x):                                      
@@ -58,3 +58,4 @@ while ok == 1:
 
 
   
+
