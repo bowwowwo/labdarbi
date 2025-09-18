@@ -19,7 +19,7 @@ int n;
 int ok = 0;
 int count;
 
-int factors(int x);                                    //funkcijas deklarācija jo ir iespējams, ka nestrādā bez tās
+int factors(int x);                                    //funkcijas deklarācija jo ir iespējams, ka nestrādā bez tās, arī lai ir vieglāk lasāms kods
 
 int main()
 {
@@ -27,9 +27,9 @@ int main()
     {
         while(1){
             std::cout << "Ievadiet skaitli m\n";
-            std::cin >> m;                             //nav jāpārbauda vai ievade ir float, jo mainīgais ir int
+            std::cin >> m;
 
-            if (m < 1) {
+            if (m < 1) {                               //nenaturāla skaitļa pārbaude
                 std::cout << "nav naturāls skaitlis\n";
             }
             else break;
@@ -45,7 +45,7 @@ int main()
             else break;
         }
 
-        std::cout << "Skaitļu reizinātāju starpība: " << factors(m) - factors(n) << std::endl;
+        std::cout << "Skaitļu reizinātāju starpība: " << factors(m) - factors(n) << std::endl;      //tiek uzreiz ievietota funkcija, lai netiktu izmantota papildus atmiņa mainīgo glabāšanai
 
         std::cout << "Vai turpināt (1) vai beigt (0)?\n";
         std::cin >> ok;
@@ -80,5 +80,6 @@ int factors(int x)
 | m=100 n=10   | 5                       | 5                       |
 | m=-1         | "nav naturāls skaitlis" | "nav naturāls skaitlis" |
 +--------------+-------------------------+-------------------------+
+
 
 */
