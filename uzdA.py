@@ -15,7 +15,7 @@ m = 0
 n = 0
 ok = 1
 
-def factors(x):  
+def factors(x):                                          # funkcija izmantota, lai kods būtu vieglāk lasāms
     count = 0
     x = int(x)    
     for i in range(x):                                      
@@ -26,7 +26,7 @@ def factors(x):
 while ok == 1:
   while True:
     m = int(input("Ievadiet naturālu skaitli m: "))
-    if m < 1:
+    if m < 1:                                            # pārbauda vai ir nenaturāls skaitlis
       print("nav naturāls skaitlis")
       continue
     else:
@@ -34,7 +34,7 @@ while ok == 1:
 
   while True:
     n = int(input("Ievadiet naturālu skaitli n: "))
-    if n < 1:
+    if n < 1: 
       print("nav naturāls skaitlis")
       continue
     else:
@@ -55,5 +55,6 @@ while ok == 1:
 +--------------+-------------------------+-------------------------+
 
 """
+
 
   
