@@ -15,7 +15,7 @@ m = 0
 n = 0
 ok = 1
 
-def factors_count(x):          #funkcija, kas atgriež argumenta skaitļa reizinātāju skaitu                                # funkcija izmantota, lai kods būtu vieglāk lasāms
+def factor_count(x):          #funkcija, kas atgriež argumenta skaitļa reizinātāju skaitu                                # funkcija izmantota, lai kods būtu vieglāk lasāms
     count = 0
     x = int(x)    
     for i in range(x):                                      
@@ -40,7 +40,7 @@ while ok == 1:
     else:
       break 
         
-  print(f"Skaitļu reizinātāju starpība:  {factors(m) - factors(n)}")
+  print(f"Skaitļu reizinātāju starpība:  {factor_count(m) - factor_count(n)}")
   ok = int(input("Vai turpināt (1) vai beigt (0)?"))
 
 """  testa plāns
@@ -58,4 +58,5 @@ while ok == 1:
 
 
   
+
 
