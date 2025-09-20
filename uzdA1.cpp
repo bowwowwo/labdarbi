@@ -54,7 +54,7 @@ int main()
     return 0;
 }
 
-int different_factor_count(int m, int n)          //funkcija, kas atgriež argumenta skaitļa reizinātāju skaitu
+int different_factor_count(int m, int n)          //funkcija, kas atgriež argumenta skaitļa dažādo reizinātāju skaitu
 {
    
     int count_different_m = 0;
@@ -99,5 +99,6 @@ int different_factor_count(int m, int n)          //funkcija, kas atgriež argum
 | m=-1         | "nav naturāls skaitlis" | "nav naturāls skaitlis" |
 | m=1 n=-1     | "nav naturāls skaitlis" | "nav naturāls skaitlis" |
 +--------------+-------------------------+-------------------------+
+
 
 */
