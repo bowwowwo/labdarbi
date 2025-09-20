@@ -28,7 +28,7 @@ int main()
             std::cout << "Ievadiet skaitli m\n";
             std::cin >> m;
 
-            if (m < 1) {                                    //nenaturāla skaitļa pārbaud
+            if (m < 1) {                                    //nenaturāla skaitļa pārbaude
                 std::cout << "nav naturāls skaitlis\n";
             }
         } while (m < 1);
@@ -66,8 +66,8 @@ int different_factor_count(int m, int n)          //funkcija, kas atgriež argum
         if (m % i == 0){                         //iegūst reizinātāju skaitu m
             count_different_m++;
             for (int j = 1; j <= n; j++){
-                if (n % j == 0) {
-                    if (i == j) {
+                if (n % j == 0) {                //iegūst reizinātāju skaitu n
+                    if (i == j) {                //reizinātāju dažādības pārbaude
                         count_same++;
                     }
                 }
@@ -102,4 +102,5 @@ int different_factor_count(int m, int n)          //funkcija, kas atgriež argum
 
 
 */
+
 
