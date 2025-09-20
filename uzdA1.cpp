@@ -62,7 +62,7 @@ int different_factor_count(int m, int n)          //funkcija, kas atgriež argum
     int count_same = 0;
 
 
-    for (int i = 1; i <= m; i++){                //for loop "sistēma" iegūst vienādo ciparu skaitu m un n
+    for (int i = 1; i <= m; i++){                //nested for loop iegūst vienādo reizinātāju skaitu m un n 
         if (m % i == 0){                         //iegūst reizinātāju skaitu m
             count_different_m++;
             for (int j = 1; j <= n; j++){
@@ -102,3 +102,4 @@ int different_factor_count(int m, int n)          //funkcija, kas atgriež argum
 
 
 */
+
