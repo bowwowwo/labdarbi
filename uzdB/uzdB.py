@@ -16,6 +16,17 @@ Programma izveidota: 04.10.2025.
 ok = 1
 n = 0
 
+"""
+void common_numbers(int sk) -
+
+izdrukā ciparus, kas atkārtojas skaitlī, kurš ir iedots funkcijas parametrā
+Atbilst šādam rakstam (pie sk = 9999)
+
+9 skaitlī: 4 reizes
+
+
+"""
+
 def common_numbers(sk):
     count = 0
     count_no_common_num = 0
@@ -40,7 +51,7 @@ def common_numbers(sk):
         else:
             count_no_common_num += 1
 
-        if count_no_common_num == 9:
+        if count_no_common_num > 9:
             print("nav vienādu ciparu")
 
 

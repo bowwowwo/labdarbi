@@ -15,7 +15,18 @@ Programma izveidota: 02.10.2025.
 
 #include <iostream>
 
-void common_numbers(int sk); //funkcijas deklarācija
+void common_numbers(int sk);
+
+/*
+
+void common_numbers(int sk) -
+
+izdrukā ciparus, kas atkārtojas skaitlī, kurš ir iedots funkcijas parametrā
+Atbilst šādam rakstam (pie sk = 9999)
+
+9 skaitlī: 4 reizes
+
+*/
 
 int main()
 {
@@ -25,17 +36,18 @@ int main()
     do
     {
 
-        do {
+        do
+        {
             std::cout << "Ievadiet skaitli n: ";
             std::cin >> n;
 
-            if (n < 1) {
+            if (n < 1)
+            {
                 std::cout << "nav naturāls skaitlis\n";
             }
         } while (n < 1);
 
         common_numbers(n);
-
 
         std::cout << "Vai turpināt (1) vai beigt (0)?\n";
         std::cin >> ok;
@@ -43,41 +55,48 @@ int main()
     } while (ok == 1);
 }
 
-void common_numbers(int sk) {
+void common_numbers(int sk)
+{
 
     int count = 0;
     int count_no_common_num = 0;
     unsigned int sk2 = sk;
     int num;
 
+    for (int i = 0; i <= 9; i++)
+    { // tiek izmantota iterācija, lai pārbaudītu ciparu skaitu
 
-    for (int i = 0; i <= 9; i++) { //tiek izmantota iterācija, lai pārbaudītu ciparu skaitu
-
-        if (sk2 < 10) {				// pārbauda vai ir jēga pildīt for ciklu
+        if (sk2 < 10)
+        { // pārbauda vai ir jēga pildīt for ciklu
             std::cout << "skaitlis ir mazāks par 10\n";
             return;
         }
 
-        sk = sk2; //tiek "atdots" skaitlis katru iterāciju
+        sk = sk2; // tiek "atdots" skaitlis katru iterāciju
         count = 0;
 
-        while (sk) { // while ciklā tiek iegūts pēdējais cipars ja tas vienāds ar iterāciju tiek papildināts to skaits skaitlī
+        while (sk)
+        { // while ciklā tiek iegūts pēdējais cipars ja tas vienāds ar iterāciju tiek papildināts to skaits skaitlī
             num = sk % 10;
             sk /= 10;
 
-            if (i == num) {
+            if (i == num)
+            {
                 count++;
             }
         }
 
-        if (count > 1) {
+        if (count > 1)
+        {
             std::cout << i << " skaitlī: " << count << " reizes" << std::endl;
         }
-        else {
+        else
+        {
             count_no_common_num++;
         }
 
-        if (count_no_common_num == 9) {
+        if (count_no_common_num > 9)
+        {
             std::cout << "nav vienādu ciparu\n";
         }
     }
