@@ -22,7 +22,10 @@ void common_numbers(int sk);
 void common_numbers(int sk);
 
 Funkcija common_numbers(sk) -
-izdrukā visu vienādos ciparus, kas atkārtojas veselā skaitlī sk.
+1. izdrukā visu vienādos ciparus, kas atkārtojas veselā skaitlī sk.
+
+2. pārbauda vai veselājā skaitlī sk ir atkārtojušies cipari, ja ir - izdrukā tos.
+
 */
 
 int main()
