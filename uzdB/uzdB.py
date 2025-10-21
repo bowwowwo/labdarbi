@@ -17,12 +17,11 @@ ok = 1
 n = 0
 
 """
-void common_numbers(int sk) -
 
-izdrukā ciparus, kas atkārtojas skaitlī, kurš ir iedots funkcijas parametrā
-Atbilst šādam rakstam (pie sk = 9999)
+def common_numbers(int sk)
 
-9 skaitlī: 4 reizes
+Funkcija common_numbers(sk) -
+izdrukā visu vienādos ciparus, kas atkārtojas veselā skaitlī sk.
 
 
 """
