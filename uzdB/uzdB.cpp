@@ -19,12 +19,12 @@ void common_numbers(int sk);
 
 /*
 
-void common_numbers(int sk) -
+void common_numbers(int sk);
 
-izdrukā ciparus, kas atkārtojas skaitlī, kurš ir iedots funkcijas parametrā
-Atbilst šādam rakstam (pie sk = 9999)
+Funkcija common_numbers(sk) -
+1. izdrukā visu vienādos ciparus, kas atkārtojas veselā skaitlī sk.
 
-9 skaitlī: 4 reizes
+2. pārbauda vai veselājā skaitlī sk ir atkārtojušies cipari, ja ir - izdrukā tos.
 
 */
 
