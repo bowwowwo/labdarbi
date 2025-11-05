@@ -51,7 +51,7 @@ int main()
 
         std::vector<int> common_num_arr = most_common_numbers(num_arr, arr_size);
 
-        std::cout << "virknē visvairāk ir skaitlis " << common_num_arr[0] << ", " << common_num_arr[1] << " reizes" << std::endl;
+        std::cout << "virknē pēc kārtas visvairāk atkārtojas skaitlis " << common_num_arr[0] << ", " << common_num_arr[1] << " reizes" << std::endl;
 
         delete[] num_arr;
 
