@@ -20,9 +20,7 @@ n = 0
 void common_numbers(int sk) -
 
 izdrukā ciparus, kas atkārtojas skaitlī, kurš ir iedots funkcijas parametrā
-Atbilst šādam rakstam (pie sk = 9999)
 
-9 skaitlī: 4 reizes
 
 
 """
