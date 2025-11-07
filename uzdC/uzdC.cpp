@@ -110,13 +110,16 @@ std::vector<int> most_common_numbers(int arr[], int arr_size)
 
 /*
 
-╔══════════════════╦═══════════════════╦══════════════════════════════════════════════════════════════╗
-║   Ievades dati   ║ Vēlamie rezultāti ║                          Rezultāti                           ║
-╠══════════════════╬═══════════════════╬══════════════════════════════════════════════════════════════╣
-║ 8;56;67;67;67;88 ║ 67; 3 reizes      ║ virknē pēc kārtas visvairāk atkārtojas skaitlis 67, 3 reizes ║
-║ 2;2;8;8;8;8      ║ 8; 4 reizes       ║ virknē pēc kārtas visvairāk atkārtojas skaitlis 8, 4 reizes  ║
-║ 1;2;3;3;4        ║ 3; 2 reizes       ║ virknē pēc kārtas visvairāk atkārtojas skaitlis 3, 2 reizes  ║
-║ 9;9;1;4;4        ║ 9; 2 reizes       ║ virknē pēc kārtas visvairāk atkārtojas skaitlis 9, 2 reizes  ║
-╚══════════════════╩═══════════════════╩══════════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════╦═══════════════════════════════╦═══════════════════╦══════════════════════════════════════════════════════════════╗
+║ Ievades dati(Virknes lielums) ║ Ievades dati(Virknes skaitļi) ║ Vēlamie rezultāti ║                          Rezultāti                           ║
+╠═══════════════════════════════╬═══════════════════════════════╬═══════════════════╬══════════════════════════════════════════════════════════════╣
+║                             6 ║ 8;56;67;67;67;88              ║ 67; 3 reizes      ║ virknē pēc kārtas visvairāk atkārtojas skaitlis 67, 3 reizes ║
+║                             6 ║ 1;2;3;4;5;6                   ║ 6; 1 reizes       ║ virknē pēc kārtas visvairāk atkārtojas skaitlis 6, 1 reizes  ║
+║                             5 ║ 1;2;3;3;4                     ║ 3; 2 reizes       ║ virknē pēc kārtas visvairāk atkārtojas skaitlis 3, 2 reizes  ║
+║                             5 ║ 9;9;1;4;4                     ║ 9; 2 reizes       ║ virknē pēc kārtas visvairāk atkārtojas skaitlis 9, 2 reizes  ║
+╚═══════════════════════════════╩═══════════════════════════════╩═══════════════════╩══════════════════════════════════════════════════════════════╝
+
+
 
 */
