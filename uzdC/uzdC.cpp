@@ -17,7 +17,8 @@ std::vector<int> most_common_numbers(int arr[], int arr_size);
 std::vector<int> most_common_numbers(int arr[], int arr_size);
 
 Funkcija most_common_numbers(arr, arr_size) -
-atgriež skaitli, kas virknē atkārtojas visvairāk reižu pēc kārtas, un to cik reižu tas atkārtojas.
+atgriež vektoru no 2 veseliem skaitļiem, kur 1.elements ir skaitlis, kas naturālu skaitļu virknē arr ar garumu arr_size atkārtojas visvairāk reižu pēc kārtas,
+un 2. elements - cik reižu pēc kārtas tas atkārtojas.
 
 */
 
@@ -51,7 +52,7 @@ int main()
 
         std::vector<int> common_num_arr = most_common_numbers(num_arr, arr_size);
 
-        std::cout << "virknē visvairāk ir skaitlis " << common_num_arr[0] << ", " << common_num_arr[1] << " reizes" << std::endl;
+        std::cout << "virknē pēc kārtas visvairāk atkārtojas skaitlis " << common_num_arr[0] << ", " << common_num_arr[1] << " reizes" << std::endl;
 
         delete[] num_arr;
 
@@ -64,7 +65,6 @@ int main()
 std::vector<int> most_common_numbers(int arr[], int arr_size)
 {
     int current_num = arr[0], count = 1;
-
     std::vector<int> result = {arr[0], 1};
 
     for (int i = 0; i < arr_size - 1; i++)
@@ -81,7 +81,7 @@ std::vector<int> most_common_numbers(int arr[], int arr_size)
                     result[1] = count;
                 }
             }
-            else if (count > result[1])
+            else if (count > result[1]) // ja skaits bija lielāks masīvā ieliek jauno skaitli
             {
                 result[0] = current_num;
                 result[1] = count;
