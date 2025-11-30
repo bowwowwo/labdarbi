@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1764543084 source:c:\users\psayt\desktop\serber2\labdarbi\uzdd\uzdd\main.cpp
+	<cstdio>
+	<windows.h>
+	<iostream>
+	"uzdD.h"
+
+1764542302 c:\users\psayt\desktop\serber2\labdarbi\uzdd\uzdd\uzdd.h
+
+1764542754 source:c:\users\psayt\desktop\serber2\labdarbi\uzdd\uzdd\uzdd.cpp
+	<iostream>
+	"uzdD.h"
+
