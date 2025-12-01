@@ -44,7 +44,7 @@ que.enqueue(176);
 que.enqueue(176);
 que.enqueue(176);
 cout << que.Count() << endl;
-que.dequeue();
+cout << que.dequeue() << endl;
 cout << que.Count() << endl;
 
 }
