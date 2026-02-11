@@ -48,10 +48,12 @@ if (!fout) {
     return 1;
 }
 
+    //apstradā failu pa rindiņai
 while (getline(fin, line)) {
     fout << convertLine(line) << endl;
 }
 
+    // norādīts ka izveidots fails lietotājam un aizvertas failu plūsmas
 cout << "\"f1.txt\" atrodas pašreizējā direktorijā" << endl;
 fin.close();
 fout.close();
@@ -60,9 +62,9 @@ fout.close();
 
 string convertLine(string l){
     int n;
-    for(char &c : l){
+    for(char &c : l){ // iet pa simbolam cauri simbolu virknei
         if(isdigit(c)){ // vai (c >= '0' && c <= '9')
-            n = modNum(c - '0');
+            n = modNum(c - '0'); // atņem '0' lai iegūtu derīgu skaitli izmantojot ascii tabulu
             c = n + '0';
         }
     }
