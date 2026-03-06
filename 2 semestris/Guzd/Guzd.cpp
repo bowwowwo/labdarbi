@@ -11,22 +11,36 @@ Darbība jāveic, pārkabinot saites, nevis pārkopējot elementu vērtības.
 
 Programma izveidota: 22.02.2026.
 ********************************************************* */
+/*
+Datu struktūra node -
+node ir 1 vienvirziena saistīta saraksta mezgls
+*/
 struct node {
     int data;
     node *next;
     node(int val) : data(val), next(nullptr) {}
 };
 
+/*
+Funkcijas printList(first) un deleteList(first) -
+iegūtas no powerpoint prezentācijas:
+"Dinamiskas datu struktūras Saistītais saraksts" Uldis Straujums, 2026
+*/
 void printList(node* first);
 void deleteList(node* first);
 
-
+/*
+Funkcija changeNElem(first, n) -
+nomaina saistīta saraksta n elementu ar aizvietojuma elementu,
+kur aizvietojuma elements ir saistīta saraksta elements pēc kārtas m,
+kurš iegūts no n elementa datiem.
+*/
 void changeNElem(node*& first, int n);
 
 
 int main(){
 
-    int arr[]={1,8,4,6,5,3,2,7,9};
+    int arr[]={1,8,4,6,5,3,2,11,9};
     node *first=nullptr,*last=nullptr;
     for(int i=0;i<9;i++) {
         node *p=new node(arr[i]);
@@ -85,8 +99,11 @@ void changeNElem(node*& first, int n){
 
 
     for(int i = 1; i < n; i++){ //iegūst n elementu
-        prevN = Nelem;
-        Nelem = Nelem->next;
+        if(Nelem != nullptr){
+            prevN = Nelem;
+            Nelem = Nelem->next;
+        }
+        else break;
     }
     if(Nelem == nullptr){
         cout << "Šāds n elements nav saistītajā sarakstā" << endl;
@@ -96,8 +113,11 @@ void changeNElem(node*& first, int n){
     num = Nelem->data;
 
     for(int i = 1; i < num; i++){ // iegūst aizvietojuma elementu m
+        if(m != nullptr){
         prevM = m;
         m = m->next;
+        }
+        else break;
     }
     if(m == nullptr){
         cout << "Elements ar šo kārtas skaitli nav saistītajā sarakstā" << endl;
@@ -114,6 +134,7 @@ void changeNElem(node*& first, int n){
         return;
     }
 
+
     if(prevM != nullptr) prevM->next = m->next; //nomaina elementa pirms m saiti uz m saiti, lai to "iznemtu"
     else first = m->next;
 
@@ -126,3 +147,17 @@ void changeNElem(node*& first, int n){
 }
 
 
+// Testa plāns un rezultāti
+/*
+
+
+╔══════════════════════╦══════════════╦═════════════════════════════════╦═══════════════════════════════════════════════════════╗
+║ Sākotnējāis saraksts ║ Ievades dati ║ Saraksts pēc funkcijas izpildes ║ Gaidītie rezultāti sarakstam                          ║
+╠══════════════════════╬══════════════╬═════════════════════════════════╬═══════════════════════════════════════════════════════╣
+║   1 8 4 6 5 3 2 11 9 ║            7 ║                1 4 6 5 3 8 11 9 ║             1 4 6 5 3 8 11 9                          ║
+║     1 4 6 5 3 8 11 9 ║            3 ║                  1 4 8 5 3 11 9 ║               1 4 8 5 3 11 9                          ║
+║       1 4 8 5 3 11 9 ║            2 ║                    1 5 8 3 11 9 ║                 1 5 8 3 11 9                          ║
+║   1 8 4 6 5 3 2 11 9 ║            8 ║              1 8 4 6 5 3 2 11 9 ║ Elements ar šo kārtas skaitli nav saistītajā sarakstā ║
+╚══════════════════════╩══════════════╩═════════════════════════════════╩═══════════════════════════════════════════════════════╝
+
+*/
