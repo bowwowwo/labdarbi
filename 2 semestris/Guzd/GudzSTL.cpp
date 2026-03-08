@@ -18,7 +18,7 @@ Programma izveidota: 22.02.2026.
 /*
 Funkcija changeNElem(ll, n) -
 nomaina stl bibliotēkas saraksta n elementu ar aizvietojuma elementu,
-kur aizvietojuma elements ir saistīta stl saraksta elements pēc kārtas m,
+kur aizvietojuma elements ir stl saraksta elements pēc kārtas m,
 kurš iegūts no n elementa datiem.
 */
 void changeNElem(list<int>& ll, int n);
