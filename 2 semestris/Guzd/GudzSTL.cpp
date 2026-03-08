@@ -66,8 +66,8 @@ void changeNElem(list<int>& ll, int n){ // n=2 num=8 m=11 {1,8,4,6,5,3,2,11,9} n
         return;
     }
 
-    auto it2 = next(ll.begin(), *num-1); //izdzes originalo aizvietojuma skaitli
-    ll.erase(it2);
+    auto it2 = next(ll.begin(), *num-1); 
+    ll.erase(it2); //izdzes originalo aizvietojuma skaitli
     *num  = m;
 
 }
