@@ -135,16 +135,24 @@ void changeNElem(node*& first, int n){
     }
 
 
-    if(prevM != nullptr) prevM->next = m->next; //nomaina elementa pirms m saiti uz m saiti, lai to "iznemtu"
+    // ja m ir pirms n tā norādi nomaina uz iepriekšējā
+    if (m == prevN) {
+        prevN = prevM;
+    }
+
+    // izņem m elementu no sarakst  liekot iepriekšējai to izlaist
+    if (prevM) prevM->next = m->next;
     else first = m->next;
 
-    if(prevN != nullptr) prevN->next = m; // ievieto aizvietojuma elementu n vietā
+    // ievieto m elementu n elementa vietā
+    if (prevN) prevN->next = m;
     else first = m;
 
-    m->next = Nelem->next; //nomaina atmiņas adresi aizvietojuma elementam, lai saraksts nebūtu pārtraukts
-    delete Nelem;
+    m->next = Nelem->next;
 
+    delete Nelem;
 }
+
 
 
 // Testa plāns un rezultāti
