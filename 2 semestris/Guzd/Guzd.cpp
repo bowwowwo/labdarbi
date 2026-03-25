@@ -125,7 +125,7 @@ void changeNElem(node*& first, int n){
     }
 
     if(m == Nelem){ // ja aizvietosanas elements vienads ar n elementu to tikai izdzes
-        if(prevN != nullptr)
+        if(prevN)
             prevN->next = Nelem->next;
         else
             first = Nelem->next;
