@@ -2,6 +2,7 @@
 #include<iostream>
 #include<cstring>
 #include<fstream>
+#include<map>
 
 
 using namespace std;
@@ -32,11 +33,15 @@ struct record{
 
 void writeBinFile(string f);
 void readBinFile(string f);
-void combineFiles();
+void combineFiles(string f, string f1, string f2);
 
 int main(){
     SetConsoleOutputCP( 65001 );
-    writeBinFile("f1");
+    //writeBinFile("f1");
+    //writeBinFile("f2");
+    combineFiles("f1", "f2", "f3");
+    readBinFile("f3");
+    readBinFile("f2");
     readBinFile("f1");
 }
 
@@ -91,4 +96,39 @@ void readBinFile(string f){
     }
 
     file.close();
+}
+
+void combineFiles(string f, string f1, string f2){
+    record r;
+    string fname = f + ".bin", fname1 = f1 + ".bin", fname2 = f2 + ".bin";
+    map<int, string> m;
+
+    ifstream file(fname, ios::binary);
+    ifstream file1(fname1, ios::binary);
+
+    while (file.read((char*)&r, sizeof(r))) {
+        m.insert({r.key, r.word});
+    }
+
+    while (file1.read((char*)&r, sizeof(r))) {
+        m.insert({r.key, r.word});
+    }
+
+    file.close(); file1.close();
+
+    /*for (auto it = m.begin(); it != m.end(); ++it)
+        cout << it->first << " " << it->second
+        << endl;*/
+
+    ofstream file2(fname2, ios::binary);
+
+    for (auto it = m.begin(); it != m.end(); ++it){
+        string s = it->second;
+
+        r.key = it->first;
+        strcpy(r.word, s.c_str());
+
+        file2.write((char*)&r, sizeof(r));
+    }
+
 }
