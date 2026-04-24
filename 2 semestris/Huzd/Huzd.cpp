@@ -8,12 +8,16 @@
 using namespace std;
 #pragma execution_character_set( "utf-8" )
 
-/*
+/* *****************************************
+Toms Gerbaševskis, tg25032
+
 H13. Doti divi bināri faili f1 un f2, kuru komponentes ir ieraksti ar struktūru: atslēga (int), vārds (nepārsniedz 30 simbolus).
 Failu komponentes sakārtotas atslēgu pieaugšanas secībā. Uzrakstīt programmu, kas apvieno failus f1 un f2 failā f3  tā,
 lai arī f3 komponentes būtu atslēgu pieaugšanas secībā (failos  nedrīkst parādīties divas komponentes ar vienādu atslēgu vērtību).
 Uzrakstīt arī palīgprogrammas, kas ļauj izveidot failus f1 un f2 un izdrukā failu saturu.
-*/
+
+Programma izveidota: 20.04.2026.
+***************************************** */
 
 struct record{
     int key;
@@ -31,18 +35,38 @@ struct record{
     }
 };
 
+/*
+Funkcija writeBinFile(f) -
+Funkcija ieraksta binārā failā ierakstus ar struktūru: atslēga (int), vārds (nepārsniedz 30 simbolus).
+*/
+
 void writeBinFile(string f);
+/*
+Funkcija readBinFile(f) -
+Funkcija nolasa binārā faila ierakstus,
+ieraksti ar struktūru: atslēga (int), vārds (nepārsniedz 30 simbolus).
+*/
+
 void readBinFile(string f);
+
+/*
+Funkcija combineFiles(f, f1, f2) -
+Funkcija izveido bināro failu f2.bin, tajā apvieno failus f un f1 failā tā,
+lai arī f2 komponentes būtu atslēgu pieaugšanas secībā.
+*/
+
 void combineFiles(string f, string f1, string f2);
 
 int main(){
     SetConsoleOutputCP( 65001 );
-    //writeBinFile("f1");
-    //writeBinFile("f2");
+    writeBinFile("f1");
+    readBinFile("f1");
+
+    writeBinFile("f2");
+    readBinFile("f2");
+
     combineFiles("f1", "f2", "f3");
     readBinFile("f3");
-    readBinFile("f2");
-    readBinFile("f1");
 }
 
 void writeBinFile(string f){
@@ -106,7 +130,7 @@ void combineFiles(string f, string f1, string f2){
     ifstream file(fname, ios::binary);
     ifstream file1(fname1, ios::binary);
 
-    while (file.read((char*)&r, sizeof(r))) {
+    while (file.read((char*)&r, sizeof(r))) { //ievieto vardnica (ievietojot tiek sakartotas vertibas augosa seciba)
         m.insert({r.key, r.word});
     }
 
@@ -116,13 +140,9 @@ void combineFiles(string f, string f1, string f2){
 
     file.close(); file1.close();
 
-    /*for (auto it = m.begin(); it != m.end(); ++it)
-        cout << it->first << " " << it->second
-        << endl;*/
-
     ofstream file2(fname2, ios::binary);
 
-    for (auto it = m.begin(); it != m.end(); ++it){
+    for (auto it = m.begin(); it != m.end(); ++it){ //ievieto faila
         string s = it->second;
 
         r.key = it->first;
@@ -131,4 +151,19 @@ void combineFiles(string f, string f1, string f2){
         file2.write((char*)&r, sizeof(r));
     }
 
+    file2.close();
 }
+
+/* Testa rezultāti #$#$#$#$#$#$#$#$#$#$#$$#$#$#$##$#$#$#$#$#$#$#
+
+╔══════════════════════════════╦════════════════════════════╦════════════════════════════════════════════════════════════╦══════════════════════════════╗
+║        fails "f1.bin"        ║       fails "f2.bin"       ║  gaidītais "f3.bin" saturs                                 ║        fails "f3.bin"        ║
+╠══════════════════════════════╬════════════════════════════╬════════════════════════════════════════════════════════════╬══════════════════════════════╣
+║ Atslega: 2, vertiba: divi    ║ Atslega: 1, vertiba: viens ║ Atslega: 1, vertiba: viens                                 ║ Atslega: 1, vertiba: viens   ║
+║ Atslega: 3, vertiba: septini ║ Atslega: 3, vertiba: tris  ║ Atslega: 2, vertiba: divi                                  ║ Atslega: 2, vertiba: divi    ║
+║ Atslega: 4, vertiba: cetri   ║ Atslega: 5, vertiba: sesi  ║ Atslega: 3, vertiba: septini VAI Atslega: 3, vertiba: tris ║ Atslega: 3, vertiba: septini ║
+║                              ║                            ║ Atslega: 4, vertiba: cetri                                 ║ Atslega: 4, vertiba: cetri   ║
+║                              ║                            ║ Atslega: 5, vertiba: sesi                                  ║ Atslega: 5, vertiba: sesi    ║
+╚══════════════════════════════╩════════════════════════════╩════════════════════════════════════════════════════════════╩══════════════════════════════╝
+
+$$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$$#$#$#$##$#$#$#$#$#$#$# */
