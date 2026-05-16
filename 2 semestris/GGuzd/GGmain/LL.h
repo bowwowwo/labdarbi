@@ -8,6 +8,7 @@ struct node
     node(int val) : data(val), next(nullptr) {}
 };
 
+void makeList(node **first);
 void printList(node *first);
 void deleteList(node *first);
 void changeNElem(node *&first, int n);

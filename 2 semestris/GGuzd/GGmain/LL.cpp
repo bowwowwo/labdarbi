@@ -1,37 +1,41 @@
-#include<iostream>
-#include"LL.h"
+#include <iostream>
+#include "LL.h"
 
 using namespace std;
 
-void makeList(node *first){
-    node* p, * last = NULL;
-	int n;
+void makeList(node **first)
+{
+    node *p, *last = NULL;
+    int n;
 
-    	do {
-		cout << "Ievadiet skaitli, 0 lai beigtu:";
-		cin >> n;
+    do
+    {
+        cout << "Ievadiet skaitli, 0 lai beigtu:";
+        cin >> n;
 
-		if (cin.fail()) { //???
-			throw - 1;
-		}
+        if (cin.fail())
+        { //???
+            throw -1;
+        }
 
-		if (n == 0) {
-			return;
-		}
+        if (n == 0)
+        {
+            return;
+        }
 
-		p = new Elem;
-		p->num = n;
-		p->next = NULL;
+        p = new node(n);
 
-		if (*first == NULL)
-		{
-			*first = last = p;
-		}
-		else {
-			last->next = p;
-			last = last->next;
-		};
-	} while (n != 0);
+        if (*first == nullptr)
+        {
+            *first = last = p;
+        }
+        else
+        {
+            last->next = p;
+            last = last->next;
+        }
+
+    } while (n != 0);
 }
 
 void printList(node *first)
@@ -58,6 +62,10 @@ void deleteList(node *first)
 
 void changeNElem(node *&first, int n)
 {
+
+    if (first == nullptr)
+        throw -210;
+
     node *Nelem = first;
     node *prevN = nullptr;
     int num;

@@ -40,9 +40,9 @@ void changeNElem(node *&first, int n);
 int main()
 {
 
-    int arr[] = {1, 8, 4, 6, 5, 3, 2, 11, 9};
+    int arr[] = {4, 5, 1, 3, 2};
     node *first = nullptr, *last = nullptr;
-    for (int i = 0; i < 9; i++)
+    for (int i = 0; i < 5; i++)
     {
         node *p = new node(arr[i]);
         if (first == nullptr)
