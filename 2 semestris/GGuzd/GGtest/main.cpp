@@ -71,8 +71,10 @@ bool test_B()
 
     arrayList(&first, arr, 10);
     changeNElem(first, n);
-    //printList(first);
-    return checkResult(first, result, 9);
+    // printList(first);
+    bool ok = checkResult(first, result, 9);
+    deleteList(first);
+    return ok;
 }
 
 bool test_C()
@@ -84,8 +86,10 @@ bool test_C()
 
     arrayList(&first, arr, 8);
     changeNElem(first, n);
-    //printList(first);
-    return checkResult(first, result, 7);
+    // printList(first);
+    bool ok = checkResult(first, result, 7);
+    deleteList(first);
+    return ok;
 }
 
 bool test_D()
@@ -97,8 +101,10 @@ bool test_D()
 
     arrayList(&first, arr, 5);
     changeNElem(first, n);
-    //printList(first);
-    return checkResult(first, result, 4);
+    // printList(first);
+    bool ok = checkResult(first, result, 4);
+    deleteList(first);
+    return ok;
 }
 
 int main()
